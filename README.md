@@ -23,7 +23,7 @@ Wait 2 minutes for it to boot.
 
 Once booted, press the button on the back of your main module to enable wifi setup.  Once pressed, the button's light should blink on and off.
 
-![Connect Image](/path/to/img.jpg)
+![Connect Image](https://github.com/nascentobjects/AirPlayExample/raw/master/main_button_push.png)
 
 The main module is now broadcasting as a wireless access point.  Connect your computer or mobile device to:
 
