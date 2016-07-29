@@ -1,7 +1,6 @@
 # Nascent AirPlay Example
 
-Documentation and setup scripts necessary for turning your Nascent Objects speaker device into an AirPlay-enabled speaker.
-
+Turn any Nascent Objects device with a speaker module into an AirPlay-enabled speaker.
 
 # Compatible Devices
 
@@ -15,9 +14,11 @@ This process should work with any Nascent Objects product that contains a speake
  - [ioPlay: An Alexa Speaker for Lego Technic](http://shopnascent.myshopify.com/products/ioplay-by-antonio-borja)
 
 
-# Connect to Your Device
+# Connecting to Your Device
 
-Insert your main module and speaker module into your shape and plug it in.
+To allow you to setup your device as an AirPlay-enabled speaker you first need to setup its wifi and connect to it.
+
+To do that, start by inserting your main module, speaker module, and any other modules into your shape and plug it in.
 
 Wait 2 minutes for it to boot.
 
@@ -43,7 +44,7 @@ Once connected to your wireless network, connect your computer or mobile phone b
 You should now be able to ssh into the device with the following credentials:
 
 <table>
-<tr><td>Host Name:</td><td><DEVICE_NAME>.local</td></tr>
+<tr><td>Host Name:</td><td>[DEVICE_NAME].local</td></tr>
 <tr><td>Username:</td><td>root</td></tr>
 <tr><td>Password:</td><td>prototype</td></tr>
 </table>
@@ -51,10 +52,10 @@ You should now be able to ssh into the device with the following credentials:
 
 # Installing Dependencies
 
-You will be setting up AirPlay support using [shairport-synchttps://github.com/mikebrady/shairport-sync](https://github.com/mikebrady/shairport-sync).  To do that, you must first install a few dependencies:
+You will be setting up AirPlay support using [shairport-sync](https://github.com/mikebrady/shairport-sync).  To do that, you must first install a few dependencies:
 
 ## Avahi
-
+```
 opkg update
 systemctl stop mdns
 opkg install avahi
@@ -62,8 +63,10 @@ systemctl enable avahi-daemon
 systemctl start avahi-daemon
 systemctl disable mdns
 opkg install avahi-dev
+```
 
 ## libconfig
+```
 opkg install coreutils
 wget --no-check-certificate http://www.hyperrealm.com/libconfig/libconfig-1.5.tar.gz
 cd libconfig-1.5
@@ -71,13 +74,16 @@ cd libconfig-1.5
 make
 make install
 cd ..
-
+```
 ## Misc Dependencies
+```
 opkg install libdaemon-dev
 opkg install libpopt-dev
 opkg install alsa-lib-dev
+```
 
 # Compiling Shairport-Sync
+```
 git clone https://github.com/mikebrady/shairport-sync
 
 getent group shairport-sync &>/dev/null || groupadd -r shairport-sync >/dev/null
@@ -89,19 +95,23 @@ autoreconf -i -f
 make
 make install
 cd ..
+```
 
 # Configure Shairport-Sync
 You now need to configure shairport sync to use your speaker module.  You can manually configure /etc/shairport-sync.conf to whatever settings you like, but you can also use the included script to generate a config file that works with your nascent device.
 
+```
 git clone https://github.com/nascentobjects/AirPlayExample
 cd AirPlayExample
 bash ./generate_shairport_conf.sh
 cd ./shairport-sync.conf /etc/
+```
 
 # Start and Enable Shairport-Sync Service
+```
 systemctl enable shairport-sync
 systemctl start shairport-sync
-
+```
 
 
 
