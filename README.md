@@ -4,7 +4,7 @@ Turn any Nascent Objects device with a speaker module into an AirPlay-enabled sp
 
 # Compatible Devices
 
-This process should work with any Nascent Objects product that contains a speaker.  Some examples of supported products include:
+This process will work with any Nascent Objects product that contains a speaker module.  Some examples of supported products include:
  - [Cielo: An Alexa Speaker by John Whaley](http://shopnascent.myshopify.com/products/cielo-by-john-whaley)
  - [Red: A Bluetooth Speaker by Alexandre Jais](http://www.nascentobjects.com/red)
  - [Bloque: An Alexa Speaker by Robert She](http://shopnascent.myshopify.com/products/chalk-by-robert-she)
@@ -16,30 +16,32 @@ This process should work with any Nascent Objects product that contains a speake
 
 # Connecting to Your Device
 
-To allow you to setup your device as an AirPlay-enabled speaker you first need to setup its wifi and connect to it.
+To setup your device as an AirPlay-enabled speaker you first need to setup its wifi and connect to it.
 
-To do that, start by inserting your main module, speaker module, and any other modules into your shape and plug it in.
+1. Start by inserting your main module, speaker module, and any other modules into your shape and plug it in.
 
-Wait 2 minutes for it to boot.
+2. Wait 2 minutes for it to boot.
 
-Once booted, press the button on the back of your main module to enable wifi setup.  Once pressed, the button's light should blink on and off.
+3. Once booted, press the button on the back of your main module to enable wifi setup.  Once pressed, the button's light should blink on and off.
 
 ![Connect Image](https://github.com/nascentobjects/AirPlayExample/raw/master/main_button_push.png)
 
-The main module is now broadcasting as a wireless access point.  Connect your computer or mobile device to:
+The main module is now broadcasting as a wireless access point.  
+
+4. Connect your computer or mobile device to:
 
 <table>
 <tr><td>SSID:</td><td>NascentDevice</td></tr>
 <tr><td>Password:</td><td>MadeFresh</td></tr>
 </table>
 
-Once successfully connected to the access point, open a web browser and navigate to:
+5. Once successfully connected to the access point, open a web browser and navigate to:
 
 http://192.168.0.1
 
-Follow the instructions in your web browser to name your device and connect it to your home wireless network.
+6. Follow the instructions in your web browser to name your device and connect it to your home wireless network.
 
-Once connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
+7. Once connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
 
 You should now be able to ssh into the device with the following credentials:
 
