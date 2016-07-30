@@ -18,30 +18,30 @@ This process will work with any Nascent Objects product that contains a speaker 
 
 To setup your device as an AirPlay-enabled speaker you first need to setup its wifi and connect to it.
 
-1. Start by inserting your main module, speaker module, and any other modules into your shape and plug it in.
+* Start by inserting your main module, speaker module, and any other modules into your shape and plug it in.
 
-2. Wait 2 minutes for it to boot.
+* Wait 2 minutes for it to boot.
 
-3. Once booted, press the button on the back of your main module to enable wifi setup.  Once pressed, the button's light should blink on and off.
+* Once booted, press the button on the back of your main module to enable wifi setup.  Once pressed, the button's light should blink on and off.
 
 ![Connect Image](https://github.com/nascentobjects/AirPlayExample/raw/master/main_button_push.png)
 
 The main module is now broadcasting as a wireless access point.  
 
-4. Connect your computer or mobile device to:
+* Connect your computer or mobile device to:
 
 <table>
 <tr><td>SSID:</td><td>NascentDevice</td></tr>
 <tr><td>Password:</td><td>MadeFresh</td></tr>
 </table>
 
-5. Once successfully connected to the access point, open a web browser and navigate to:
+* Once successfully connected to the access point, open a web browser and navigate to:
 
 http://192.168.0.1
 
-6. Follow the instructions in your web browser to name your device and connect it to your home wireless network.
+* Follow the instructions in your web browser to name your device and connect it to your home wireless network.
 
-7. Once connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
+* Once connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
 
 You should now be able to ssh into the device with the following credentials:
 
@@ -100,7 +100,7 @@ cd ..
 ```
 
 # Configure Shairport-Sync
-You now need to configure shairport sync to use your speaker module.  You can manually configure /etc/shairport-sync.conf to whatever settings you like, but you can also use the included script to generate a config file that works with your nascent device.
+You now need to configure shairport sync to use your speaker module.  You can configure this manually by editing /etc/shairport-sync.conf to whatever settings you like, but to make things easy we've included a script to generate a config file that will be compatible with your nascent device.
 
 ```
 git clone https://github.com/nascentobjects/AirPlayExample
@@ -110,6 +110,7 @@ cd ./shairport-sync.conf /etc/
 ```
 
 # Start and Enable Shairport-Sync Service
+Enable the systemd service to start your airplay speaker service automatically at boot.
 ```
 systemctl enable shairport-sync
 systemctl start shairport-sync
