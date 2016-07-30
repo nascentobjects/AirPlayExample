@@ -51,12 +51,14 @@ You should now be able to ssh into the device with the following credentials:
 <tr><td>Password:</td><td>prototype</td></tr>
 </table>
 
+The rest of this setup process should be performed on device from an active SSH session.
 
 # Installing Dependencies
 
 You will be setting up AirPlay support using [shairport-sync](https://github.com/mikebrady/shairport-sync).  To do that, you must first install a few dependencies:
 
 ## Avahi
+By default your Nascent Main Module uses mdns for zero-conf networking, but Shairport-Sync wants Avahi.
 ```
 opkg update
 systemctl stop mdns
@@ -77,7 +79,7 @@ make
 make install
 cd ..
 ```
-## Misc Dependencies
+## Other Dependencies
 ```
 opkg install libdaemon-dev
 opkg install libpopt-dev
