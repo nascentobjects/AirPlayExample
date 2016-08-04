@@ -31,25 +31,26 @@ The main module is now broadcasting as a wireless access point.
 * Connect your computer or mobile device to:
 
 <table>
-<tr><td>SSID:</td><td>NascentDevice</td></tr>
-<tr><td>Password:</td><td>MadeFresh</td></tr>
+<tr><td>SSID:</td><td>Nascent Main</td></tr>
+<tr><td>Password:</td><td>prototype</td></tr>
 </table>
 
 * Once successfully connected to the access point, open a web browser and navigate to:
 
-http://192.168.0.1
+http://192.168.42.1
 
-* Follow the instructions in your web browser to name your device and connect it to your home wireless network.
+* Use the device setup web portal to set your:
+  1. SSH Password
+  2. Device Name
+  3. Home Wifi Network
 
-* Once connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
+* Once the device is connected to your wireless network, connect your computer or mobile phone back to your home wireless network.
 
-You should now be able to ssh into the device with the following credentials:
-
-<table>
-<tr><td>Host Name:</td><td>[DEVICE_NAME].local</td></tr>
-<tr><td>Username:</td><td>root</td></tr>
-<tr><td>Password:</td><td>prototype</td></tr>
-</table>
+You should now be able to ssh into the device with a command similar to:
+```
+ssh root@[DEVICE_NAME].local
+```
+Where [DEVICE_NAME] and the ssh password are the ones you specified.
 
 The rest of this setup process should be performed on device from an active SSH session.
 
